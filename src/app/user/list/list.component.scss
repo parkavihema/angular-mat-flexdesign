@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 500px;
+  }
+  th.mat-header-cell {
+    text-align: left;
+    max-width: 300px;
+  }
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  .icon-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0px;
+    min-width: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+  font-size: 25px;
+}

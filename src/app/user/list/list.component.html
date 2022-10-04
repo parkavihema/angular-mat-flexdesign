@@ -1,0 +1,39 @@
+<div class="mat-elevation-z8">
+  <div class="container" fxLayout="row" fxLayoutAlign="end">
+    <a href="/add" class="title">Add</a>
+  </div>
+  <div class="table-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.employee_name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="salary">
+        <mat-header-cell *matHeaderCellDef> Salary </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.employee_salary}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef> Employee Age </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.employee_age }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+        <mat-cell *matCellDef="let element"><button mat-button class="icon-btn" matTooltip="Edit"
+            (click)="updateUser(element)">
+            <mat-icon>edit</mat-icon>
+          </button> </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let element"><button mat-button class="icon-btn" matTooltip="Delete"
+            (click)="confirmAndDelete(element)">
+            <mat-icon>delete</mat-icon>
+          </button> </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
